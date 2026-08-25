@@ -1,0 +1,316 @@
+================================================================================
+                    ABSOLUTE SYSTEM - COMPLETE GUIDE
+                          Version 1.0.0
+================================================================================
+
+📌 INTRODUCTION
+--------------------------------------------------------------------------------
+Absolute System is a comprehensive and integrated artificial intelligence system
+designed to be a living digital entity capable of independent operation,
+continuous learning, self-evolution, and managing complex processes in multiple
+fields such as trading, networking, security, and artificial intelligence.
+
+The system is built on Python 3.12+ and uses over 50 open-source libraries,
+consisting of more than 1500 program files, each containing 1500 lines of code,
+totaling over 2.2 million lines of integrated code.
+
+================================================================================
+                            1. SYSTEM STRUCTURE
+================================================================================
+
+The system is divided into 8 main sections, each containing a specific number of files:
+
+📂 1. Core (src/core/) - 300 files
+   - Manages basic system operations such as booting, monitoring, memory management,
+     task scheduling, and error handling.
+   - Main files:
+     * boot_loader.py - Boot loader: starts the system, checks requirements,
+       loads components, and manages the system lifecycle.
+     * system_monitor.py - System monitor: tracks CPU, memory, disk, network,
+       and process usage in real-time.
+     * memory_manager.py - Memory manager: monitors memory usage, optimizes
+       performance, and detects leaks.
+     * task_scheduler.py - Task scheduler: manages scheduled and recurring tasks.
+     * process_manager.py - Process manager: controls running processes,
+       restarts them when needed.
+     * thread_pool.py - Thread pool: manages parallel processing threads.
+     * event_loop.py - Event loop: manages asynchronous events.
+     * error_handler.py - Error handler: catches errors, logs them, and takes
+       appropriate actions like retry or escalation.
+     * performance_tracker.py - Performance tracker: collects and analyzes
+       performance metrics.
+     * log_manager.py - Log manager: logs events, manages log rotation,
+       and compresses old files.
+     * config_manager.py - Config manager: loads settings from YAML or JSON files,
+       supports auto-reload.
+     * health_check.py - Health check: verifies component health and generates reports.
+     * backup_manager.py - Backup manager: creates backups of important files and data.
+     * update_manager.py - Update manager: checks for updates, downloads, and installs them.
+     * plugin_manager.py - Plugin manager: loads and manages external plugins.
+     * cache_manager.py - Cache manager: caches data for performance improvement
+       using LRU and LFU strategies.
+     * security_manager.py - Security manager: provides encryption, authentication,
+       authorization, and token management.
+     * network_manager.py - Network manager: manages network connections and protocols.
+     * database_manager.py - Database manager: handles SQLite, PostgreSQL, MongoDB, etc.
+     * api_manager.py - API manager: creates and manages REST and WebSocket APIs.
+     * notification_manager.py - Notification manager: sends notifications via
+       multiple channels like email, Telegram, and Slack.
+
+📂 2. Artificial Intelligence (src/ai/) - 250 files
+   - Includes machine learning models, neural networks, natural language processing,
+     computer vision, and content generation.
+   - Main files:
+     * neural_core.py - Neural core: manages artificial neural networks.
+     * llm_engine.py - LLM engine: handles large language models like LLaMA and Phi.
+     * nlp_pipeline.py - NLP pipeline: sentiment analysis, translation, summarization.
+     * vision_engine.py - Vision engine: image and video processing.
+     * speech_engine.py - Speech engine: speech recognition and synthesis.
+     * rl_agent.py - Reinforcement learning agent.
+     * genetic_algorithm.py - Genetic algorithms: optimizes solutions using evolution.
+     * transformer.py - Transformer model: for sequence processing.
+     * bert.py - BERT model: for bidirectional text understanding.
+     * gpt.py - GPT model: for text generation.
+
+📂 3. Trading and Investment (src/trading/) - 200 files
+   - Market analysis tools, order execution, and risk management.
+   - Main files:
+     * market_analyzer.py - Market analyzer: technical and fundamental analysis.
+     * strategy_engine.py - Strategy engine: executes trading strategies.
+     * risk_manager.py - Risk manager: calculates and manages risk.
+     * order_executor.py - Order executor: sends buy and sell orders.
+     * portfolio_manager.py - Portfolio manager: tracks assets and rebalances.
+     * backtester.py - Backtester: simulates trading on historical data.
+     * live_trader.py - Live trader: executes live trades.
+
+📂 4. Networks and Communications (src/network/) - 200 files
+   - Network protocols, device communication, and data transfer.
+   - Main files:
+     * p2p_manager.py - Peer-to-peer network.
+     * dht_node.py - Distributed hash table.
+     * message_bus.py - Message bus.
+     * websocket_server.py - WebSocket server.
+     * grpc_server.py - gRPC server.
+
+📂 5. Security and Protection (src/security/) - 180 files
+   - Encryption, authentication, authorization, and identity management.
+   - Main files:
+     * encryption_engine.py - Encryption engine: AES, RSA, symmetric and asymmetric.
+     * auth_manager.py - Auth manager: JWT, OAuth2, 2FA.
+     * audit_logger.py - Audit logger: logs all security events.
+     * access_control.py - Access control: manages permissions.
+     * firewall_manager.py - Firewall manager.
+     * vpn_manager.py - VPN manager.
+
+📂 6. Databases (src/database/) - 150 files
+   - Handling various databases.
+   - Main files:
+     * sqlite_engine.py - SQLite engine.
+     * postgres_engine.py - PostgreSQL engine.
+     * mongodb_engine.py - MongoDB engine.
+     * redis_engine.py - Redis engine for caching.
+     * elasticsearch_engine.py - Elasticsearch engine.
+
+📂 7. APIs (src/api/) - 120 files
+   - REST, GraphQL, WebSocket, and more.
+   - Main files:
+     * rest_server.py - REST server.
+     * graphql_server.py - GraphQL server.
+     * websocket_server.py - WebSocket server.
+     * webhook_manager.py - Webhook manager.
+
+📂 8. Utilities (src/utils/) - 108 files
+   - Developer utilities.
+   - Main files:
+     * file_manager.py - File management.
+     * string_utils.py - String processing.
+     * math_utils.py - Mathematical functions.
+     * date_utils.py - Date processing.
+     * crypto_utils.py - Cryptography tools.
+     * network_utils.py - Network tools.
+
+================================================================================
+                            2. CORE COMPONENTS
+================================================================================
+
+🖥️ 1. Boot Loader (boot_loader.py)
+   - Checks system requirements.
+   - Loads all components.
+   - Manages the system lifecycle (start, run, stop).
+   - Handles signals (SIGINT, SIGTERM).
+   - Logs boot time and uptime.
+
+📊 2. System Monitor (system_monitor.py)
+   - Monitors CPU usage.
+   - Monitors memory (RAM) and swap usage.
+   - Monitors disk usage.
+   - Monitors network activity.
+   - Monitors process and thread count.
+   - Issues alerts when thresholds are exceeded.
+
+🧠 3. Memory Manager (memory_manager.py)
+   - Monitors memory usage.
+   - Optimizes memory usage.
+   - Detects memory leaks.
+   - Manages cache.
+   - Provides information on top memory-consuming processes.
+
+⏰ 4. Task Scheduler (task_scheduler.py)
+   - Manages recurring and periodic tasks.
+   - Supports prioritization.
+   - Handles retries on failure.
+   - Logs task execution and statistics.
+
+🔒 5. Security Manager (security_manager.py)
+   - Provides advanced encryption (AES-256-GCM).
+   - Manages authentication (JWT, OAuth2).
+   - Manages authorization (RBAC).
+   - Manages tokens and keys.
+   - Logs security events.
+
+💾 6. Database Manager (database_manager.py)
+   - Handles local SQLite.
+   - Handles remote PostgreSQL.
+   - Handles Redis for caching.
+   - Supports basic CRUD operations.
+   - Supports secure connections and encryption.
+
+📡 7. Network Manager (network_manager.py)
+   - Manages network connections.
+   - Supports TCP/UDP protocols.
+   - Supports WebSocket.
+   - Manages active connections.
+   - Monitors network status.
+
+================================================================================
+                         3. OPERATION MECHANISM
+================================================================================
+
+🔄 1. Boot Phase
+   ┌─────────────────────────────────────────────────────────────┐
+   │ 1. System Check                                           │
+   │    - Memory, CPU, Disk, Network                           │
+   │ 2. Component Loading                                     │
+   │    - Load all components in sequence                      │
+   │ 3. Service Start                                          │
+   │    - Start services in separate threads                   │
+   │ 4. Health Check                                           │
+   │    - Ensure all components are ready                      │
+   │ 5. Running                                                │
+   │    - Stay in an infinite running loop                     │
+   └─────────────────────────────────────────────────────────────┘
+
+⚙️ 2. Lifecycle
+   ┌─────────────────────────────────────────────────────────────┐
+   │ INITIALIZING → CHECKING → LOADING → STARTING → RUNNING   │
+   │                ↓                                          │
+   │              ERROR ← DEGRADED ← STOPPING → STOPPED       │
+   └─────────────────────────────────────────────────────────────┘
+
+🧩 3. Component Mechanism
+   - Each component is an independent module that can be loaded, started, and stopped.
+   - Components run in separate threads for parallelism.
+   - Components can communicate via the Message Bus.
+
+📦 4. Plugins
+   - The system supports external plugins.
+   - Plugins are dynamically loaded from the `plugins/` folder.
+   - Plugins can be enabled/disabled without restarting the system.
+
+================================================================================
+                             4. TECHNOLOGIES USED
+================================================================================
+
+🐍 Programming Languages
+   - Python 3.12+ (primary)
+   - C/C++ (integrated libraries)
+   - JavaScript (for UI interaction)
+
+📚 Core Libraries
+   - numpy: mathematical calculations
+   - pandas: data processing and analysis
+   - psutil: system monitoring
+   - pyyaml: YAML file reading and writing
+   - python-dotenv: environment variable management
+
+🌐 Web and Servers
+   - fastapi: building REST APIs
+   - uvicorn: running ASGI servers
+   - starlette: web tools
+   - pydantic: data validation
+   - requests: HTTP requests
+   - aiohttp: asynchronous requests
+   - websockets: WebSocket connections
+
+🤖 Artificial Intelligence
+   - torch: deep learning (PyTorch)
+   - torchvision: computer vision
+   - transformers: language models (BERT, GPT, LLaMA)
+   - langchain: LLM chains
+   - sentence-transformers: text embeddings
+   - scikit-learn: classical machine learning
+   - tensorflow: deep learning (TensorFlow)
+
+💰 Trading
+   - ccxt: cryptocurrency trading
+   - yfinance: financial data
+   - ta: technical indicators
+   - backtrader: backtesting trading strategies
+   - web3: blockchain interaction
+   - eth-account: Ethereum account management
+
+🔐 Security
+   - cryptography: advanced encryption
+   - pyjwt: JWT creation and verification
+   - bcrypt: password hashing
+   - paramiko: SSH
+
+💾 Databases
+   - sqlalchemy: ORM
+   - redis: fast caching
+   - psycopg2-binary: PostgreSQL
+
+🛠️ Development Tools
+   - pytest: unit testing
+   - pytest-asyncio: async testing
+   - black: code formatting
+   - flake8: error checking
+   - mypy: type checking
+
+📦 Package Management
+   - pip: package installation
+   - setuptools: package building
+
+================================================================================
+                     5. SYSTEM REQUIREMENTS
+================================================================================
+
+💻 1. Hardware
+   - CPU: minimum 2 cores (4 cores recommended)
+   - RAM: minimum 4 GB (8 GB recommended)
+   - Storage: minimum 10 GB free (20 GB recommended)
+   - OS: Android 10+ (Termux) or Linux
+
+📦 2. Software
+   - Python 3.12+
+   - Pip 24+
+   - Git 2.30+
+   - Termux (for phones) or Linux
+
+📋 3. Libraries
+   - All libraries are listed in `requirements.txt`.
+   - Install using: `pip install -r requirements.txt`
+
+🌐 4. Network
+   - Internet connection for downloading data and updates.
+   - Port 8080 open for web services.
+
+================================================================================
+                     6. HOW TO RUN
+================================================================================
+
+🚀 1. Installation
+   ```bash
+   git clone https://github.com/mahmmadpetro-max/AbsoluteSystem.git
+   cd AbsoluteSystem
+   pip install -r requirements.txt
